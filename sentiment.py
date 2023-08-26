@@ -2,13 +2,11 @@ import emoji
 import tweepy
 import pandas as pd
 from os import getenv
-from dotenv import load_dotenv
 
 from transformers import pipeline
 
 from helper import tweet_history, strip_all_entities, clean_hashtags, filter_chars, remove_mult_spaces
 
-load_dotenv()
 
 auth = tweepy.OAuthHandler(getenv('TWITTER_API_KEY'), getenv('TWITTER_API_KEY_SECRET'))
 auth.set_access_token(getenv('TWITTER_ACCESS_TOKEN'), getenv('TWITTER_ACCESS_TOKEN_SECRET'))
