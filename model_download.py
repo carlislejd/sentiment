@@ -1,4 +1,4 @@
-from transformers import RobertaTokenizer, RobertaForSequenceClassification
+from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
 # Define paths
 SENTIMENT_MODEL_PATH = "./sentiment_model"
@@ -8,8 +8,8 @@ SENTIMENT_TOKENIZER_PATH = "./sentiment_tokenizer"
 #EMOTION_TOKENIZER_PATH = "./emotion_tokenizer"
 
 # Download and save sentiment model and tokenizer
-sentiment_model = RobertaForSequenceClassification.from_pretrained("cardiffnlp/twitter-xlm-roberta-base-sentiment")
-sentiment_tokenizer = RobertaTokenizer.from_pretrained("cardiffnlp/twitter-xlm-roberta-base-sentiment")
+sentiment_model = AutoModelForSequenceClassification.from_pretrained("cardiffnlp/twitter-xlm-roberta-base-sentiment")
+sentiment_tokenizer = AutoTokenizer.from_pretrained("cardiffnlp/twitter-xlm-roberta-base-sentiment")
 sentiment_model.save_pretrained(SENTIMENT_MODEL_PATH)
 sentiment_tokenizer.save_pretrained(SENTIMENT_TOKENIZER_PATH)
 
